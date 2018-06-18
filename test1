@@ -1,0 +1,23 @@
+#!/bin/bash
+
+r=`expr $RANDOM % 11 + 80`
+
+count=3
+
+while [ $count -gt 0 ]
+do
+ read -p "Input a number: " NUM
+ count=`expr $count - 1`
+ if [ $NUM -gt $r ]; then
+   echo "you guess too more,you have $count chances."
+   continue
+ elif [ $NUM -lt $r ]; then
+   echo "you guess too less,you have $count chances."
+   continue
+ else
+   echo "Great! you guess correct."
+   break
+ fi
+done
+
+
